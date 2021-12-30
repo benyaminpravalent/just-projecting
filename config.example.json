@@ -1,0 +1,4 @@
+{
+    "port": "8000",
+    "mysql_dsn": "root:benyamin@tcp(localhost:3306)/majoodb?parseTime=true"
+  }

@@ -1,0 +1,91 @@
+syntax = "proto3";
+
+package proto;
+option go_package = "./v1;pb";
+import "google/api/annotations.proto";
+
+
+service User {
+    rpc Get (GetUserRequest) returns (GetUserResponse) {
+        option (google.api.http) = {
+             get: "/v1/user"
+        };
+    }
+
+    rpc GetById (GetUserByIdRequest) returns (GetUserByIdResponse) {
+        option (google.api.http) = {
+             get: "/v1/user/{id}"
+        };
+    }
+
+}
+
+message ModelUser {
+    int32 id = 1;
+    int32 age =2;
+    string name = 3;
+}
+
+message GetUserRequest {
+    map<string, string> headers = 1;
+}
+
+message GetUserResponse {
+    uint32 status = 1;
+    message Data {
+        repeated ModelUser users = 2;
+    };
+    Data data = 2;
+}
+
+message PostUserRequest {
+    map<string, string> headers = 1;
+    ModelUser user = 2;
+}
+
+message PostUserResponse {
+    uint32 status = 1;
+    message Data {
+        string message = 2;
+    };
+    Data data = 2;
+}
+
+message PutUserRequest {
+    map<string, string> headers = 1;
+    ModelUser user = 2;
+}
+
+message PutUserResponse {
+    uint32 status = 1;
+    message Data {
+        string message = 2;
+    };
+    Data data = 2;
+}
+
+message DeleteUserRequest {
+    map<string, string> headers = 1;
+    int32 id = 2;
+}
+
+message DeleteUserResponse {
+    uint32 status = 1;
+    message Data {
+        string message = 2;
+    };
+    Data data = 2;
+}
+
+message GetUserByIdRequest {
+    map<string, string> headers = 1;
+    int32 id = 2;
+}
+
+message GetUserByIdResponse {
+    uint32 status = 1;
+    message Data {
+        ModelUser user = 2;
+    };
+    Data data = 2;
+}

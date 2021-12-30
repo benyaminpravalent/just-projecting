@@ -5,6 +5,7 @@ go 1.16
 require (
 	github.com/Shopify/sarama v1.29.1
 	github.com/denisenkom/go-mssqldb v0.10.0
+	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
 	github.com/go-sql-driver/mysql v1.6.0
 	github.com/gofiber/fiber/v2 v2.18.0
@@ -16,10 +17,10 @@ require (
 	github.com/mediocregopher/radix/v3 v3.7.1
 	github.com/mitchellh/mapstructure v1.4.0 // indirect
 	github.com/pelletier/go-toml v1.7.0 // indirect
+	github.com/prometheus/common v0.4.0
 	github.com/sirupsen/logrus v1.8.1
 	github.com/spf13/cobra v1.1.1
 	github.com/spf13/viper v1.7.1
-	github.com/stretchr/objx v0.1.1 // indirect
 	golang.org/x/exp v0.0.0-20200224162631-6cc2880d07d6 // indirect
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
 	google.golang.org/genproto v0.0.0-20210909211513-a8c4777a87af

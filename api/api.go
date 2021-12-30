@@ -88,7 +88,13 @@ func (f *FiberServer) registerHandlers() error {
 	user.Get("/", userHandler.GetUsers)
 	user.Get("/count/:id", userHandler.CountUsers)
 	user.Get("/:id", userHandler.GetUser)
-	user.Post("/publish", userHandler.PublishMessage)
+
+	merchant := f.app.Group("/merchant")
+	merchant.Get("/omzet", userHandler.GetMerchantOmzet)
+	merchant.Get("/outlet/omzet", userHandler.GetOutletOmzet)
+
+	auth := f.app.Group("/auth")
+	auth.Post("/login", userHandler.Login)
 
 	return nil
 }
